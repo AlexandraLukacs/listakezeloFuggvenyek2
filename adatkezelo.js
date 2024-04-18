@@ -18,6 +18,18 @@ export function tablazatRendez(lista, irany){
         return lista;
 }
 
+export function tablazatRendezSzamSzerint(lista, irany){
+    /* Adott mező (név) szerint rendezi a atábázatot. - akkor hívódik meg, ha a táblázat név fejlécmezőjére kattintunk.
+        Berendezzük a listát */
+        lista.sort(function(a,b){
+
+            return a.kor - b.kor; 
+            
+        });
+
+        return lista;
+}
+
 /* HF - szorgalmi: lehessen rendezni kor szerint is! *** tetszőleges mező szerint */
 
 export function atalakit(lista){

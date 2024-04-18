@@ -1,6 +1,7 @@
 import { megjelenites, tablazatOsszeallit } from "./fuggvenyek.js";
 import { emberekLISTA } from "./adat.js";
 import { szuresNevSzerint, tablazatRendez, sorTorles } from "./adatkezelo.js";
+import { adatokListaba } from "./urlapkezelo.js";
 
 /* jelenítsük meg az adatainkat egy táblázatban az adatok div-ben
 az urlap div-ben legyen egy űrlap, amivel ilyen adatokat tudunk a táblázatba beletenni 
@@ -30,8 +31,9 @@ Akkor fog lefutni, amikor megváltozik a  szürőmező tartalma.
 let nevIrany = 1;
 init(emberekLISTA);
 nevSzuresEsemeny();
+adatokListaba(emberekLISTA);
 
-function init(lista){
+export function init(lista){
     const txt = tablazatOsszeallit(lista);
     megjelenites(txt);
     nevRendezEsemeny(lista);

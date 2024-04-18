@@ -15,24 +15,28 @@
             <h1>Listakezelés</h1>
             <article>
                 <div class="urlap">
-                    <form action="/action_page.php">
+                    <form action="/action_page.php" class="was-validated">
                         <div class="mb-3 mt-3">
                           <label for="nev" class="form-label">Név</label>
-                          <input type="text" class="form-control" id="nev" placeholder="valaki vagyok" name="nev">
+                          <input type="text" class="form-control" id="nev" pattern="^[A-Z][a-zA-Z]{2,}$" required placeholder="valaki vagyok" name="nev">
+                          <div class="valid-feedback">Ok.</div>
+                          <div class="invalid-feedback">A név megadása kötelező! Nagybetűvel Kezdődik, legalább 3 karakter legyen.</div>
                         </div>
                         <div class="mb-3">
                           <label for="kor" class="form-label">Kor</label>
-                          <input type="number" class="form-control" id="kor" min="0" max="120" name="kor">
+                          <input type="number" class="form-control" id="kor" required placeholder="kor" min="0" max="120" name="kor">
+                          <div class="valid-feedback">Ok.</div>
+                          <div class="invalid-feedback">A kor 0 és 120 között kell legyen.</div>
                         </div>
                         <div class="form-check mb-3">
                             <label class="form-check-label">férfi</label>
-                            <input class="form-check-input" type="radio" name="nem">
+                            <input class="form-check-input" type="radio" name="nem" value="false">
                         </div>
                         <div class="form-check mb-3">
                             <label class="form-check-label">nő</label>
-                            <input class="form-check-input" type="radio" name="nem">
+                            <input class="form-check-input" type="radio" name="nem" value="true">
                         </div>
-                        <button type="submit" class="btn btn-primary">Hozzáad</button>
+                        <button type="submit" id="submit" class="btn btn-primary">Hozzáad</button>
                       </form>
                 </div>
                 <div class="szuro">
